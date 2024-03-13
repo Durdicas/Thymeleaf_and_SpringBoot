@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Employees</h1>
+	
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Employee First Name</th>
+				<th>Employee Last Name</th>
+				<th>Employee Email</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="employee : ${employees}">
+				<td th:text="${employee.firstName}"></td>
+				<td th:text="${employee.lastName}"></td>
+				<td th:text="${employee.email}"></td>
+			</tr>
+			
+			<!--
+			<tr th:each="employee : ${employees}"
+				th:style="${employeeStat.add}? 'font-weight:bold'"
+				th:alt-title="${employeeStat.even}? 'even' : 'add'">
+				<td th:text="${employee.firstName}"></td>
+				<td th:text="${employee.lastName}"></td>
+				<td th:text="${employee.email}"></td>
+			</tr>
+			-->
+		
+		</tbody>
+	</table>
+</body>
+</html>
